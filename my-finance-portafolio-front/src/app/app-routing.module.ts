@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NavbarComponent } from './modules/navbar/navbar/navbar.component';
+import { PopularStocksComponent } from './modules/popular-stocks/popular-stocks.component';
 
 const routes: Routes = [
   {
@@ -11,8 +12,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: NavbarComponent
+    component: PopularStocksComponent
   },
+  {
+    path: 'popular-stocks',
+    component: PopularStocksComponent
+  }
 ];
 
 @NgModule({
