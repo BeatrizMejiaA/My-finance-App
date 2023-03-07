@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PortfoliosModule } from './portfolios/portfolios.module';
 import { PortfolioEntity } from './portfolios/portfolio.entity/portfolio.entity';
+import { StocksModule } from './stocks/stocks.module';
 
 @Module({
   imports: [
@@ -20,6 +21,8 @@ import { PortfolioEntity } from './portfolios/portfolio.entity/portfolio.entity'
     }),
 
     PortfoliosModule,
+
+    StocksModule,
   ],
   controllers: [AppController],
   providers: [AppService],

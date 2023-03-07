@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common';
 import { PortfolioEntity } from './portfolio.entity/portfolio.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -12,6 +12,14 @@ export class PortfoliosService {
   ) {}
 
   createPortfolio(portfolio: createPortfolioDto) {
+    const portExist = this.portfolioRepository.findOne({
+      where: {
+        name: portfolio.name,
+      },
+    });
+    if (portExist) {
+      return new HttpException('Portfalio already exists', HttpStatus.CONFLICT);
+    }
     const newportfolio = this.portfolioRepository.create(portfolio);
     return this.portfolioRepository.save(newportfolio);
   }
