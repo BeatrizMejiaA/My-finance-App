@@ -1,1 +1,38 @@
-<p>popular-stocks works!</p>
+<div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  p-8 gap-8 h-screen w-screen items-center justify-center">
+  <div class="rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out" *ngFor="let stock of stocks">
+    <img class="w-full rounded-t-xl h-36 object-cover"
+      src="https://media.istockphoto.com/id/1250581414/photo/blue-double-exposure-of-money-coins-stacking-with-bar-graph-for-financial-and-investment.jpg?s=612x612&w=0&k=20&c=tjDzpMnVSMO2RGzt0GNwL7ccmkJytRaKsco4HzB1X5k=">
+    <div class="p-6">
+      <div class="flex flex-row">
+        <div class="uppercase text-xs text-yellow-600 bg-yellow-200 rounded-xl px-2 py-2">
+          {{stock.T}}
+        </div>
+
+
+      </div>
+      <div class="overflow-x-auto">
+        <table class="table-auto min-w-max text-sm">
+          <thead>
+            <tr>
+              <th class="px-4 py-2">Open</th>
+              <th class="px-4 py-2">Close</th>
+              <th class="px-4 py-2">High</th>
+              <th class="px-4 py-2">Low</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+              <td class="px-4 py-2">{{stock.o}}</td>
+              <td class=" px-4 py-2">{{stock.c}}</td>
+              <td class=" px-4 py-2">{{stock.h}}</td>
+              <td class=" px-4 py-2">{{stock.l}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

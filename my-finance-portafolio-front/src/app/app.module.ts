@@ -7,7 +7,8 @@ import { NavbarComponent } from './modules/navbar/navbar/navbar.component';
 import { PopularStocksComponent } from './modules/popular-stocks/popular-stocks.component';
 import { NewsComponent } from './modules/news/news.component';
 import { SetPortafolioComponent } from './modules/set-portafolio/set-portafolio.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { CardPupularStocksComponent } from './modules/card-pupular-stocks/card-pupular-stocks.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,10 +16,12 @@ import { SetPortafolioComponent } from './modules/set-portafolio/set-portafolio.
     PopularStocksComponent,
     NewsComponent,
     SetPortafolioComponent,
+    CardPupularStocksComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

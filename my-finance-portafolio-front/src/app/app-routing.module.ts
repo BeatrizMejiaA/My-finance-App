@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NavbarComponent } from './modules/navbar/navbar/navbar.component';
 import { PopularStocksComponent } from './modules/popular-stocks/popular-stocks.component';
+import { NewsComponent } from './modules/news/news.component';
+import { SetPortafolioComponent } from './modules/set-portafolio/set-portafolio.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'popular-stocks',
     component: PopularStocksComponent
+  },
+  {
+    path: 'news',
+    component: NewsComponent
+  },
+  {
+    path: 'setPortafolio',
+    component: SetPortafolioComponent
   }
 ];
 
