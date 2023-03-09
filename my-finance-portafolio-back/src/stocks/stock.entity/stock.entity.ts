@@ -1,6 +1,6 @@
 import { PortfolioEntity } from 'src/portfolios/portfolio.entity/portfolio.entity';
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-@Entity()
+@Entity('stockentity')
 export class StockEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -11,9 +11,9 @@ export class StockEntity {
   @Column({ nullable: true })
   stockFullName: string;
 
-  @Column({ precision: 6, scale: 2 })
-  stockValue: number;
+  // @Column({ precision: 6, scale: 2 })
+  // stockValue: number;
 
-  @ManyToOne(() => PortfolioEntity)
-  parentPortfolio: PortfolioEntity;
+  // @ManyToOne(() => PortfolioEntity)
+  //parentPortfolio: PortfolioEntity;
 }

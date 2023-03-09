@@ -1,46 +1,73 @@
-<div class="pt-8 px-2 py-2">
-  <form class="w-full max-w-lg mx-auto">
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-          Portafolio Name
-        </label>
-        <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-first-name" type="text" placeholder="">
-      </div>
-      <div class="w-full md:w-1/2 px-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-          Description
-        </label>
-        <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-last-name" type="text" placeholder="">
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Crear</button>
-      </div>
-    </div>
-  </form>
-  <div class="w-full max-w-lg mx-auto">
-    <table class="table-auto min-w-max text-sm">
-      <thead>
-        <tr>
-          <th class="px-4 py-2">Portafolio Name</th>
-          <th class="px-4 py-2">Description</th>
-          <th class="px-4 py-2">Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr >
-          <td class="px-4 py-2">1</td>
-          <td class=" px-4 py-2">2</td>
-          <button class="bg-green-300 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded" >See details</button>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container mx-auto p-5 h-screen">
+  <div class="p-6 justify-items-center ">
 
+    <form class="space-y-2 pb-8 relative" (ngSubmit)="createStock() ">
+      <div class="grid grid-cols-1 lg:grid-col-2 lg:gap-3">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            Stock Name
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-first-name" type="text" placeholder="" name="name" [(ngModel)]="portfolio.name">
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+            Stock Description
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-last-name" type="text" placeholder="" name="description" [(ngModel)]="portfolio.description">
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+            Stock Value
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-last-name" type="number" placeholder="" name="stockValue" [(ngModel)]="portfolio.stockValue">
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            Stock Quantity
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            type="number" placeholder="" name="stockQty" [(ngModel)]="portfolio.stockQty">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3 justify-center">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add</button>
+        </div>
+      </div>
+    </form>
+    <div class="overflow-auto rounded-lg shadow">
+      <table class=" w-full p-4 table-auto min-w-max text-sm border-separate">
+        <thead class="bg-blue-200">
+          <tr>
+            <th class="px-4 py-2">ID</th>
+            <th class="px-4 py-2">Stock Name</th>
+            <th class="px-4 py-2">Stock Description</th>
+            <th class="px-4 py-2">Stock Value</th>
+            <th class="px-4 py-2">Stock Units</th>
+            <th class="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let stock of allPortfolios">
+          <tr class="p-2">
+            <th scope="row" class="px-4 py-2 whitespace-nowrap"> {{stock.id}} </th>
+            <td class="px-4 py-2 whitespace-nowrap"> {{stock.name}} </td>
+            <td class=" px-4 py-2 whitespace-nowrap">{{stock.description}}</td>
+            <td class=" px-4 py-2 whitespace-nowrap">{{stock.stockValue}}</td>
+            <td class=" px-4 py-2 whitespace-nowrap">{{stock.stockQty}}</td>
+            <td><button class=" btn btn-danger bg-green-300 hover:bg-blue-300 text-white font-bold rounded-lg w-20 h-10"
+                (click)="deleteStock(stock)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
 </div>

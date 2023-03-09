@@ -3,10 +3,9 @@
   <div
     class="rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out"
     *ngFor="let new of news.results">
-    <div class="image-container">
-      <img class="w-full rounded-t-xl h-36 object-cover">
-    </div>
-    <div class="flex flex-col p-7">
+    <img class=" image-container w-full rounded-t-xl h-36 object-cover">
+
+    <div class="flex flex-col px-3 py-3">
       <div class="flex flex-row">
         <div class="uppercase text-lg text-white bg-gray-600 rounded-xl px-2 py-2">
           {{new.tickers}}
@@ -14,13 +13,19 @@
 
 
       </div>
-      <h2 class="text-lg font-extralight truncate mt-1 uppercase"> {{new.keywords}} </h2>
-      <p class="text-base text-gray-500">
-        {{new.description}}
-      </p>
+      <div>
+        <h2 class="text-justify bg-yellow-100 font-extralight truncate  mt-1 uppercase"> {{new.keywords}} </h2>
+
+      </div>
+      <div class="max-w-screen-xl mx-auto">
+        <p class="text-center sm:text-left">
+          {{new.title}}
+        </p>
+      </div>
+
       <div class="flex flex-row mt-5 items-center justify-start">
         <p class="font-bold text-sm mr-2"> {{new.author}} </p>
-        <p class="text-sm" > {{new.title}} </p>
+        <p class="text-sm md:text-lg lg:text-xl"> {{new.title}} </p>
       </div>
     </div>
 

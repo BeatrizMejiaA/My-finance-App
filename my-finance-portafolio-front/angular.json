@@ -71,7 +71,8 @@
               "browserTarget": "my-finance-portafolio-front:build:production"
             },
             "development": {
-              "browserTarget": "my-finance-portafolio-front:build:development"
+              "browserTarget": "my-finance-portafolio-front:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

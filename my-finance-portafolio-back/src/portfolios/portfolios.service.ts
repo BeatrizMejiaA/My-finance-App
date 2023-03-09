@@ -12,14 +12,15 @@ export class PortfoliosService {
   ) {}
 
   createPortfolio(portfolio: createPortfolioDto) {
-    const portExist = this.portfolioRepository.findOne({
+    //console.log(portfolio);
+    /*const portExist = this.portfolioRepository.findOne({
       where: {
         name: portfolio.name,
       },
     });
     if (portExist) {
-      return new HttpException('Portfalio already exists', HttpStatus.CONFLICT);
-    }
+      return new HttpException('Portfolio already exists', HttpStatus.CONFLICT);
+    }*/
     const newportfolio = this.portfolioRepository.create(portfolio);
     return this.portfolioRepository.save(newportfolio);
   }

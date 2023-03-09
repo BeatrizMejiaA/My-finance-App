@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
 export class createPortfolioDto {
-  name: string;
-  description: string;
+  readonly name: string;
+  readonly stockValue: number;
+  readonly description: string;
+  
 }

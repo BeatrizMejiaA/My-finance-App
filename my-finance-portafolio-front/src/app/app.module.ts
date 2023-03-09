@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,6 @@ import { PopularStocksComponent } from './modules/popular-stocks/popular-stocks.
 import { NewsComponent } from './modules/news/news.component';
 import { SetPortafolioComponent } from './modules/set-portafolio/set-portafolio.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CardPupularStocksComponent } from './modules/card-pupular-stocks/card-pupular-stocks.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +16,13 @@ import { CardPupularStocksComponent } from './modules/card-pupular-stocks/card-p
     PopularStocksComponent,
     NewsComponent,
     SetPortafolioComponent,
-    CardPupularStocksComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

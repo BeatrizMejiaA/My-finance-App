@@ -1,13 +1,19 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { StockEntity } from '../../stocks/stock.entity/stock.entity';
 
-@Entity({ name: 'PORTFOLIO', schema: 'myportfolio' })
+@Entity({ name: 'portfolio', schema: 'myportfolio' })
 export class PortfolioEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column()
   name: string;
+
+  @Column()
+  stockValue: number;
+
+  @Column()
+  stockQty: number;
 
   @Column({ nullable: true })
   description: string;
@@ -15,6 +21,6 @@ export class PortfolioEntity {
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
 
-  @OneToMany(() => StockEntity, (stock) => stock.parentPortfolio)
-  stocks: StockEntity[];
+  //@OneToMany(() => StockEntity, (stock) => stock.parentPortfolio)
+  // stocks: StockEntity[];
 }
