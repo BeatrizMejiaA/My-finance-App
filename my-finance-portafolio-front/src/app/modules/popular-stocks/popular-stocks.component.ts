@@ -19,11 +19,5 @@ export class PopularStocksComponent implements OnInit {
 
   }
 
- /* ngOnInit(): void {
-    this.stocksService.getData()
-      .then(data => {
-        (this.stocks = console.log(data));
-      })
-      .catch(error => console.error(error));
-  }*/
+
 }
