@@ -61,7 +61,7 @@ export class SetPortafolioComponent implements OnInit {
     );
   }
 
-  // gets all stocks from the API of polygon, 
+  // gets all stocks from the API of polygon, showing just 100 because has more than 10k
   getStocksSelect() {
     console.log(this.stockOptions);
     this.stocksService.getStocks().subscribe(
@@ -70,6 +70,7 @@ export class SetPortafolioComponent implements OnInit {
     );
   }
 
+  // gets the input user form values, added validations and call endpoint create and set it to DB
   createPortfolio() {
     console.log(this.portfolioForm);
 
@@ -99,6 +100,7 @@ export class SetPortafolioComponent implements OnInit {
     }
   }
 
+  // this take the id from the stock that will be deleted and request to DB to be removed
   deleteStock(portfolio: Portfolio): void {
     //console.log(`here is${portfolio}`);
     if (portfolio.id === undefined) {

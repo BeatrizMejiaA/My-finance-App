@@ -7,34 +7,41 @@ import { PortfolioEntity } from './portfolios/portfolio.entity/portfolio.entity'
 import { StocksModule } from './stocks/stocks.module';
 import { StockEntity } from './stocks/stock.entity/stock.entity';
 import { CorsMiddleware } from './middleware/cors.middleware';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      charset: 'utf8mb4',
-      synchronize: true,
-      logging: ['error'],
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'password',
-      database: 'myportfolio',
-      subscribers: [],
-      keepConnectionAlive: true,
-      autoLoadEntities: true,
-      entities: [PortfolioEntity, StockEntity],
-      //synchronize: false,
-      //logging: true,
-      // migrationsRun: false,
+    ConfigModule.forRoot({
+      envFilePath: `.${process.env.NODE_ENV}.env`,
+      isGlobal: true,
     }),
-
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        charset: 'utf8mb4',
+        synchronize: true,
+        logging: ['error'],
+        type: 'mysql',
+        host: configService.get<string>('DB_HOST'),
+        port: parseInt(configService.get<string>('DB_PORT')),
+        username: configService.get<string>('DB_USER'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_NAME'),
+        subscribers: [],
+        keepConnectionAlive: true,
+        autoLoadEntities: true,
+        entities: [PortfolioEntity, StockEntity],
+        //logging: true,
+        // migrationsRun: false,
+      }),
+      inject: [ConfigService],
+    }),
     PortfoliosModule,
 
     StocksModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ConfigService],
 })
 export class AppModule {}
 /*export class AppModule implements NestModule {

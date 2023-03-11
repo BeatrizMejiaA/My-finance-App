@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StocksService } from 'src/app/services/stocks.service';
-import { popularStocks } from 'src/app/models/popular-stocks.model';
 
 @Component({
   selector: 'app-popular-stocks',

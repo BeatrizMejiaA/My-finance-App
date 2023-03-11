@@ -5,11 +5,17 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
-  await app.listen(3000);
+  const configService = app.get(ConfigService);
+  console.log(`see here:`);
+
+  const a = configService.get('PORT');
+  console.log(parseInt(a));
+  await app.listen(parseInt(a));
 }
 bootstrap();
 

@@ -11,16 +11,17 @@ export class PortfoliosService {
     private portfolioRepository: Repository<PortfolioEntity>,
   ) {}
 
-  createPortfolio(portfolio: createPortfolioDto) {
+  async createPortfolio(portfolio: createPortfolioDto) {
     //console.log(portfolio);
-    /*const portExist = this.portfolioRepository.findOne({
+    const portExist = await this.portfolioRepository.findOne({
       where: {
         name: portfolio.name,
       },
     });
+
     if (portExist) {
       return new HttpException('Portfolio already exists', HttpStatus.CONFLICT);
-    }*/
+    }
     const newportfolio = this.portfolioRepository.create(portfolio);
     return this.portfolioRepository.save(newportfolio);
   }
