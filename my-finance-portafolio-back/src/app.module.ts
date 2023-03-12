@@ -1,4 +1,4 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -6,7 +6,6 @@ import { PortfoliosModule } from './portfolios/portfolios.module';
 import { PortfolioEntity } from './portfolios/portfolio.entity/portfolio.entity';
 import { StocksModule } from './stocks/stocks.module';
 import { StockEntity } from './stocks/stock.entity/stock.entity';
-import { CorsMiddleware } from './middleware/cors.middleware';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
@@ -44,8 +43,3 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
   providers: [AppService, ConfigService],
 })
 export class AppModule {}
-/*export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(CorsMiddleware).forRoutes('*');
-  }
-}*/
