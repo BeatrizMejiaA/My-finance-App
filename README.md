@@ -1,23 +1,22 @@
 # My-finance-App
 
-## This is a basic application that shows actions in the stock market with real information:
-
-## This application contains the following features:
+## My-finance-App is a basic application that provides real-time information about the stock market. This application has a frontend and a backend. 
+## The frontend of the application was developed using Angular and Tailwind CSS, which helped to modularize each part of the UI and provide responsiveness. 
+## Reactive forms were used to get user input information and to validate inputs easily. 
+## The backend of the application was developed using NestJs and MySQL, which is a framework that helps to create scalable server-side applications. 
+## TypeORM was integrated with NestJs to simplify and maintain the data integrity.
 
 ### Frontend:
+#### The My-finance-App frontend includes the following features:
 
-#### - The UI for this app, was made with angular, which helped me to modularize each part of the UI.
-#### - I have integrated Tailwind CSS to add colors, get responsivness in the app, this framework is easy to use, and its classes are very usefull
-####   and easy to integrate.
-#### - 2 APIs from polygon (to get more info: https://polygon.io/docs/stocks/getting-started) was used to create this app: 
-####   https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/2023-01-09
-####   and https://api.polygon.io/v2/reference/news
+##### - Popular stocks: This page contains the status of 20 popular stocks, including the open, close, high, and low prices, with real data. The stock data is sourced #####   from the Polygon APIs.
+##### - News: This page shows news about stocks with current and real data.
+##### - Set portfolio: This page allows users to add/delete stocks and invest a specific amount of money. The application saves all user stock investments, but no real #####   investment is made.
 
-##### The app contains 3 pages:
-#### - Popular stocks:
-####   This pag, contais the stock status, shows the open, close, high and low price with real data, this app only shows 20 stocks, because
-####   has more than 10k and this is an app example.
-#### - News:
-####   This page shows news about stocks with current and real data.
-#### - Set portfolio:
-####   On this page you can add/delete stocks and put and amount to invest, this app will save all your stocks, no real investment will be done.
+### Backend:
+#### The My-finance-App backend includes the following features:
+
+##### - Developed using NestJs: The NestJs framework helps to create scalable server-side applications.
+##### - TypeORM: TypeORM helps to map the database structures, simplify data, and maintain data integrity.
+##### - Swagger module: The backend endpoints are documented using the Swagger module.
+##### - Error Handling: HttpExceptions are used to handle errors and return the appropriate status with the respective message.
