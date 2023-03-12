@@ -1,6 +1,6 @@
 # My-finance-App
 
-## My-finance-App is a basic application that provides real-time information about the stock market. This application has a frontend and a backend. 
+My-finance-App is a basic application that provides real-time information about the stock market. This application has a frontend and a backend. 
 The frontend of the application was developed using Angular and Tailwind CSS, which helped to modularize each part of the UI and provide responsiveness. 
 Reactive forms were used to get user input information and to validate inputs easily. 
 The backend of the application was developed using NestJs and MySQL, which is a framework that helps to create scalable server-side applications. 
