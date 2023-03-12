@@ -20,3 +20,25 @@ TypeORM was integrated with NestJs to simplify and maintain the data integrity.
 ##### - TypeORM: TypeORM helps to map the database structures, simplify data, and maintain data integrity.
 ##### - Swagger module: The backend endpoints are documented using the Swagger module.
 ##### - Error Handling: HttpExceptions are used to handle errors and return the appropriate status with the respective message.
+
+
+### Installation
+#### To use the My-finance-App application, follow these steps:
+
+#### - Clone the repository: git clone https://github.com/username/my-finance-app.git
+#### - Install the necessary dependencies: npm install
+#### - Start the frontend: ng serve
+#### - Start the backend: npm run start:dev
+#### - Open the application in a browser: http://localhost:4200
+#### - Open Swagger Endpoints on: http://localhost:3000/api-stocks
+
+### Technologies Used
+#### My-finance-App was built using the following technologies:
+
+##### Angular: Frontend framework used to build the UI.
+##### Tailwind CSS: CSS framework used for styling the UI.
+##### NestJs: Backend framework used to build the API.
+##### TypeORM: Object-relational mapper used to map database structures.
+##### MySQL: Database used to store the app's data.
+##### Swagger module to get endpoints documented.
+##### configService: to configure the .env file.
