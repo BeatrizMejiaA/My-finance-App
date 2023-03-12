@@ -25,7 +25,7 @@ TypeORM was integrated with NestJs to simplify and maintain the data integrity.
 ### Installation
 #### To use the My-finance-App application, follow these steps:
 
-#### - Clone the repository: git clone https://github.com/username/my-finance-app.git
+#### - Clone the repository: git clone https://github.com/BeatrizMejiaA/My-finance-App.git
 #### - Install the necessary dependencies: npm install
 #### - Start the frontend: ng serve
 #### - Start the backend: npm run start:dev
