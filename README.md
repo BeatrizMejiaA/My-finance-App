@@ -28,7 +28,7 @@ TypeORM was integrated with NestJs to simplify and maintain the data integrity.
 #### - Clone the repository: git clone https://github.com/BeatrizMejiaA/My-finance-App.git
 #### - Install the necessary dependencies: npm install
 #### - Start the frontend: ng serve
-#### - Start the backend: npm run start:dev or npm run stard:prod
+#### - Start the backend: npm run start:dev or npm run start:prod
 #### - Open the application in a browser: http://localhost:4200
 #### - Open Swagger Endpoints on: http://localhost:3000/api-stocks
 
